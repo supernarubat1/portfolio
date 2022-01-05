@@ -25,47 +25,47 @@ const Header = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center p-3 bg-black text-white shadow-lg">
-      <div className="flex justify-between w-full">
-        <h1 className="text-3xl font-semibold">T A E</h1>
+    <div className="fixed inset-x-0 flex flex-col md:flex-row justify-between items-center p-4 md:p-8 bg-black text-white shadow-lg">
+      <div className="container mx-auto flex justify-between">
+        <h1 className="text-2xl font-semibold">{"{ t a e }"}</h1>
         <button
           className="md:hidden"
           onClick={() => setShowMenu(showMenu ? false : true)}
         >
           <MdMenu className="text-3xl" />
         </button>
-      </div>
-      {/* desktop */}
-      <div className="hidden md:flex">
-        {menuItems.map((item) => (
-          <li
-            key={item.key}
-            className={`list-none mx-5 ${
-              item.key === pathname
-                ? "text-white font-bold"
-                : "text-zinc-400 hover:text-white"
-            }`}
-          >
-            <Link to={item.key}>{item.title}</Link>
-          </li>
-        ))}
-      </div>
-      {/* mobile */}
-      {showMenu && (
-        <div className="md:hidden flex flex-col">
+        {/* desktop */}
+        <ul className="hidden md:flex items-center">
           {menuItems.map((item) => (
             <li
               key={item.key}
-              className={`list-none m-3 ${
+              className={`list-none md:mx-8 ${
                 item.key === pathname
-                  ? "text-white font-bold"
+                  ? "text-white font-bold animate-pulse"
                   : "text-zinc-400 hover:text-white"
               }`}
             >
               <Link to={item.key}>{item.title}</Link>
             </li>
           ))}
-        </div>
+        </ul>
+      </div>
+      {/* mobile */}
+      {showMenu && (
+        <ul className="md:hidden flex flex-col mt-10 bg-black fixed inset-x-0 text-center">
+          {menuItems.map((item) => (
+            <li
+              key={item.key}
+              className={`list-none m-3 ${
+                item.key === pathname
+                  ? "text-white font-bold animate-pulse"
+                  : "text-zinc-400"
+              }`}
+            >
+              <Link to={item.key}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
