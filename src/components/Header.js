@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MdMenu } from "react-icons/md";
+import { MdMenu, MdLanguage } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
+  const [lang, setLang] = useState("en");
   const pathname = window.location.pathname;
   const [showMenu, setShowMenu] = useState(false);
   const menuItems = [
@@ -24,10 +27,15 @@ const Header = () => {
     },
   ];
 
+  const changeLang = (l) => {
+    setLang(l);
+    i18n.changeLanguage(l);
+  };
+
   return (
-    <div className="fixed inset-x-0 flex flex-col md:flex-row justify-between items-center p-4 md:p-8 bg-black text-white shadow-lg">
+    <div className="fixed inset-x-0 top-0 flex flex-col md:flex-row justify-between items-center p-4 md:py-8 lg:mx-40 bg-black text-white shadow-lg">
       <div className="container mx-auto flex justify-between">
-        <h1 className="text-2xl font-semibold">{"{ t a e }"}</h1>
+        <button className="text-2xl font-semibold">{"{ t a e }"}</button>
         <button
           className="md:hidden"
           onClick={() => setShowMenu(showMenu ? false : true)}
@@ -45,10 +53,26 @@ const Header = () => {
                   : "text-zinc-400 hover:text-white"
               }`}
             >
-              <Link to={item.key}>{item.title}</Link>
+              <Link to={item.key}>{t(item.title)}</Link>
             </li>
           ))}
         </ul>
+        {/* ปุ่มเปลี่ยนภาษา */}
+        <div className="flex gap-2">
+          <MdLanguage size={20} className="mt-1.5" />
+          <button
+            className={`${lang === "en" && "border-2"} px-1`}
+            onClick={() => changeLang("en")}
+          >
+            EN
+          </button>
+          <button
+            className={`${lang === "th" && "border-2"} px-1`}
+            onClick={() => changeLang("th")}
+          >
+            TH
+          </button>
+        </div>
       </div>
       {/* mobile */}
       {showMenu && (
