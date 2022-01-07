@@ -21,7 +21,7 @@ const Home = () => {
     <Layout>
       <div className="container mx-auto">
         {/* Home */}
-        <div className="grid justify-items-center pt-36 space-y-10">
+        <div id="home" className="grid justify-items-center pt-36 space-y-10">
           {/* profile */}
           <img
             onMouseEnter={() =>
@@ -49,13 +49,16 @@ const Home = () => {
           </div>
           {/* btn contact */}
           <div className="py-10">
-            <button className="animate-bounce z-50 w-full px-10 py-4 rounded-full text-black bg-white font-semibold">
+            <a
+              href="#contact"
+              className="animate-bounce inline-block z-50 w-full px-10 py-4 rounded-full text-black bg-white font-semibold"
+            >
               {t("6")}
-            </button>
+            </a>
           </div>
         </div>
         {/* Education */}
-        <div className="py-32">
+        <div id="education" className="py-28">
           <h1 className="text-white text-4xl font-bold text-center">{t(7)}</h1>
           <div className="mt-20">
             <Timeline>
@@ -191,7 +194,7 @@ const Home = () => {
           </div>
         </div>
         {/* Projects */}
-        <div className="py-20">
+        <div id="projects" className="py-28">
           <h1 className="text-white text-4xl font-bold text-center">{t(18)}</h1>
           {/* project 1 */}
           <div className="mt-20 gap-x-4 gap-y-10 md:gap-y-20 grid lg:grid-cols-2 mx-4">
@@ -244,7 +247,7 @@ const Home = () => {
           </div>
         </div>
         {/* Contact */}
-        <div className="py-32">
+        <div id="contact" className="py-28">
           <h1 className="text-white text-4xl text-center font-bold">{t(27)}</h1>
           <div className="mt-20 flex flex-col items-center px-4 gap-8">
             <div className="flex flex-col items-center w-full gap-2">

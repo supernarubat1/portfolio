@@ -27,12 +27,14 @@ const Footer = () => {
           <RiTwitterLine className="text-gray-500" size={25} />
           <RiLinkedinBoxLine className="text-gray-500" size={25} />
         </div>
+        <h1 className="text-gray-500 flex justify-center mt-5 md:mt-0">
+          React + Tailwind
+        </h1>
         <div className="flex justify-center mt-5 md:mt-0">
           <MdOutlineMail className="text-gray-500 inline" size={25} />
           <h1 className="inline text-white pl-2">narubat1@gmail.com</h1>
         </div>
       </div>
-      <h1 className="text-white pb-2 text-center">React + Tailwind</h1>
     </div>
   );
 };

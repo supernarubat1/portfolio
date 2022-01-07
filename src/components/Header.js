@@ -1,29 +1,28 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { MdMenu, MdLanguage } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState("en");
-  const pathname = window.location.pathname;
+  const [hash, setHash] = useState(window.location.hash);
   const [showMenu, setShowMenu] = useState(false);
   const menuItems = [
     {
       title: "Home",
-      key: "/",
+      key: "#home",
     },
     {
       title: "Education",
-      key: "/education",
+      key: "#education",
     },
     {
       title: "Projects",
-      key: "/projects",
+      key: "#projects",
     },
     {
       title: "Contact",
-      key: "/contact",
+      key: "#contact",
     },
   ];
 
@@ -48,12 +47,15 @@ const Header = () => {
             <li
               key={item.key}
               className={`list-none md:mx-8 ${
-                item.key === pathname
+                item.key === hash
                   ? "text-white font-bold animate-pulse"
                   : "text-zinc-400 hover:text-white"
               }`}
             >
-              <Link to={item.key}>{t(item.title)}</Link>
+              {/* <Link to={item.key}>{t(item.title)}</Link> */}
+              <a href={item.key} onClick={() => setHash(item.key)}>
+                {t(item.title)}
+              </a>
             </li>
           ))}
         </ul>
@@ -81,12 +83,21 @@ const Header = () => {
             <li
               key={item.key}
               className={`list-none m-3 ${
-                item.key === pathname
+                item.key === hash
                   ? "text-white font-bold animate-pulse"
                   : "text-zinc-400"
               }`}
             >
-              <Link to={item.key}>{item.title}</Link>
+              {/* <Link to={item.key}>{item.title}</Link> */}
+              <a
+                href={item.key}
+                onClick={() => {
+                  setShowMenu(false);
+                  setHash(item.key);
+                }}
+              >
+                {t(item.title)}
+              </a>
             </li>
           ))}
         </ul>
