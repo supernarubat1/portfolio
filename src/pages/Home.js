@@ -211,7 +211,7 @@ const Home = () => {
                 <li>{t(24)}</li>
               </ul>
               <a
-                href="/files/swimLane.pdf"
+                href={`${github}/files/online_repair_notification_system.pdf`}
                 target="_blank"
                 className="text-white inline-block rounded border px-4 py-2 mt-10 md:mt-0 md:absolute md:bottom-0 hover:bg-white hover:text-black"
               >
@@ -233,7 +233,7 @@ const Home = () => {
               <h1 className="text-white text-2xl font-semibold">{t(25)}</h1>
               <p className="text-gray-500 mt-4">{t(26)}</p>
               <a
-                href="/files/chatApp.pdf"
+                href={`${github}/files/chat_app.pdf`}
                 target="_blank"
                 className="text-white inline-block rounded border px-4 py-2 mt-10 md:mt-0 md:absolute md:bottom-0 hover:bg-white hover:text-black"
               >
