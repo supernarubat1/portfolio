@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 const App = () => {
   return (
     <>
-      <Router>
+      <Router basename={window.location.pathname || ""}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/education" element={<Education />} />

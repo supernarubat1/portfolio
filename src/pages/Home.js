@@ -12,9 +12,10 @@ import {
 import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const github = "/portfolio";
   const { t } = useTranslation();
   const [profileImage, setProfileImage] = useState(
-    "/images/profile/profile.jpg"
+    `${github}/images/profile/profile.jpg`
   );
 
   return (
@@ -25,9 +26,11 @@ const Home = () => {
           {/* profile */}
           <img
             onMouseEnter={() =>
-              setProfileImage("/images/profile/profile-swim.jpg")
+              setProfileImage(`${github}/images/profile/profile-swim.jpg`)
             }
-            onMouseOut={() => setProfileImage("/images/profile/profile.jpg")}
+            onMouseOut={() =>
+              setProfileImage(`${github}/images/profile/profile.jpg`)
+            }
             className="rounded-full object-cover h-44 w-44"
             src={profileImage}
             alt="profile"
@@ -218,7 +221,7 @@ const Home = () => {
             <div>
               <img
                 className="object-cover rounded"
-                src="/images/projects/project1.png"
+                src={`${github}/images/projects/project1.png`}
                 alt="project1"
               />
             </div>
@@ -240,7 +243,7 @@ const Home = () => {
             <div>
               <img
                 className="object-cover h-96 rounded"
-                src="/images/projects/project2.png"
+                src={`${github}/images/projects/project2.png`}
                 alt="project2"
               />
             </div>
