@@ -40,8 +40,8 @@ const Home = () => {
             <h1 className="text-white text-center text-4xl font-bold">
               {t("1")}
             </h1>
-            <h1 className="text-white text-lg mt-10 line-through">{t("2")}</h1>
-            <h1 className="text-white text-lg line-through">{t("3")}</h1>
+            <h1 className="text-white text-lg mt-10">{t("2")}</h1>
+            <h1 className="text-white text-lg">{t("3")}</h1>
             <h1 className="text-gray-500 text-xl mt-10">
               {t("4")}
               <p>
@@ -172,7 +172,7 @@ const Home = () => {
                   color: "white",
                   fontWeight: "bold",
                   fontSize: "16px",
-                  textDecorationLine: "line-through",
+                  // textDecorationLine: "line-through",
                 }}
                 subtitleStyle={{
                   color: "white",
@@ -214,6 +214,7 @@ const Home = () => {
                 href={`${github}/files/online_repair_notification_system.pdf`}
                 target="_blank"
                 className="text-white inline-block rounded border px-4 py-2 mt-10 md:mt-0 md:absolute md:bottom-0 hover:bg-white hover:text-black"
+                rel="noreferrer"
               >
                 {t("downloadFile")}
               </a>
@@ -236,6 +237,7 @@ const Home = () => {
                 href={`${github}/files/chat_app.pdf`}
                 target="_blank"
                 className="text-white inline-block rounded border px-4 py-2 mt-10 md:mt-0 md:absolute md:bottom-0 hover:bg-white hover:text-black"
+                rel="noreferrer"
               >
                 {t("downloadFile")}
               </a>
