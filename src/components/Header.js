@@ -21,6 +21,10 @@ const Header = () => {
       key: "#projects",
     },
     {
+      title: "Certificate",
+      key: "#certificate",
+    },
+    {
       title: "Contact",
       key: "#contact",
     },

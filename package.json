@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://supernarubat1.github.io/portfolio/",
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -14,8 +15,10 @@
     "react-event-timeline": "^1.6.3",
     "react-i18next": "^11.15.3",
     "react-icons": "^4.3.1",
+    "react-responsive-carousel": "^3.2.22",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "sweetalert2": "^11.3.6",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
