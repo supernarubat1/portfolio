@@ -112,7 +112,7 @@ const Home = () => {
             </h1>
             <h1 className="text-white text-lg mt-10">{t("2")}</h1>
             <h1 className="text-white text-lg">{t("3")}</h1>
-            <h1 className="text-gray-500 text-xl mt-10">
+            <h1 className="text-gray-500 text-xl mt-10 line-through">
               {t("4")}
               <p>
                 {t("5")}
